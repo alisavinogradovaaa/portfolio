@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моё портфолио | Веб-разработчик</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка с именем и фото -->
+        <header class="header">
+            <div class="profile">
+                <img src="photo.jpg" 
+                     alt="Фото студента" class="avatar">
+                <h1 class="name">Виноградова Алиса</h1>
+                <p class="title">Студент IT-направления | Начинающий веб-разработчик</p>
+            </div>
+        </header>
+
+        <!-- Основное содержимое -->
+        <main class="main-content">
+            <!-- Секция "Обо мне" -->
+            <section class="section about">
+                <h2 class="section-title"><i class="fas fa-user"></i> Обо мне</h2>
+                <p class="about-text">Я студентка 2 курса, обучаюсь по направлению "Информационные системы и технологии". Увлекаюсь веб-разработкой, изучаю современные технологии и frameworks. В будущем планирую стать full-stack разработчиком.</p>
+            </section>
+
+            <!-- Секция "Навыки" -->
+            <section class="section skills">
+                <h2 class="section-title"><i class="fas fa-code"></i> Профессиональные навыки</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <h3 class="skill-title">Frontend</h3>
+                        <ul class="skill-list">
+                            <li>HTML5 & CSS3</li>
+                            <li>JavaScript (базовый)</li>
+                            <li>Адаптивная верстка</li>
+                            <li>Bootstrap 5</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="skill-title">Backend</h3>
+                        <ul class="skill-list">
+                            <li>Python (Django)</li>
+                            <li>PHP (базовый)</li>
+                            <li>MySQL / PostgreSQL</li>
+                            <li>REST API</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="skill-title">Инструменты</h3>
+                        <ul class="skill-list">
+                            <li>Git & GitHub</li>
+                            <li>VS Code</li>
+                            <li>Figma</li>
+                            <li>Docker (базовый)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция "Контакты" -->
+            <section class="section contacts">
+                <h2 class="section-title"><i class="fas fa-envelope"></i> Контакты</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>alisavinograd@yandex.ru</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <span>github.com/student-dev</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-vk"></i>
+                        <span>vk.com/student_it</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+7 (900) 118-67-34</span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Секция "Лабораторная работа" -->
+            <section class="section lab-info">
+                <h2 class="section-title"><i class="fas fa-flask"></i> О данной лабораторной работе</h2>
+                <p>Эта страница создана в рамках лабораторной работы по теме <strong>"Доменные имена и хостинг"</strong>.</p>
+                <p><strong>Цели работы:</strong> изучение DNS-записей, настройка хостинга на GitHub Pages, работа с доменными именами.</p>
+                <p><strong>Дата выполнения:</strong> <span id="current-date"></span></p>
+            </section>
+        </main>
+
+        <!-- Подвал -->
+        <footer class="footer">
+            <p>&copy; 2023 Портфолио студента IT-направления. Все права защищены.</p>
+            <p class="footer-note">Страница размещена на GitHub Pages</p>
+        </footer>
+    </div>
+
+    <script>
+        // Добавляем текущую дату в раздел о лабораторной работе
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('ru-RU');
+        
+        // Простая анимация при наведении на карточки навыков
+        document.querySelectorAll('.skill-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
